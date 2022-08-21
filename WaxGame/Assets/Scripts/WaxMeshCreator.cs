@@ -10,8 +10,8 @@ public class WaxMeshCreator : MonoBehaviour
     private Mesh deformingMesh;
     private Vector3[] originalVertices;
     private Vector3[] originalVerticesPositions;
-    private float maxDistanceForVertex = 200;
-    private const float maxDistanceConstant = 200;
+    private float maxDistanceForVertex = 170;
+    private const float maxDistanceConstant = 170;
     [SerializeField] private List<Vector3> upperSideVertices = new List<Vector3>();
 
     private void Start()
@@ -44,9 +44,9 @@ public class WaxMeshCreator : MonoBehaviour
         }
         else if (Input.GetMouseButton(0))
         {
-            if (maxDistanceForVertex < 350)
+            if (maxDistanceForVertex < 250)
             {
-                maxDistanceForVertex += Time.deltaTime * 30;
+                maxDistanceForVertex += Time.deltaTime * 25;
             }
         }
         else if (Input.GetMouseButtonUp(0))

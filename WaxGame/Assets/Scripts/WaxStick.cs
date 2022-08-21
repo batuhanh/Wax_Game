@@ -1,34 +1,49 @@
 using UnityEngine;
 
-public class WaxStick : MonoBehaviour
+public class WaxStick : Moveable
 {
 
-	public float force = 10f;
-	public float forceOffset = 0.1f;
-
-	void Update()
-	{
-		if (Input.GetMouseButton(0))
-		{
-			
-			HandleInput();
+	[SerializeField] private float force = -25f;
+	[SerializeField] private float forceOffset = 0.1f;
+	[SerializeField] private LayerMask layerMask;
+    public override void Update()
+    {
+		base.Update();
+        if (isMoving)
+        {
+			RayToArm();
 		}
-	}
-
-	void HandleInput()
+    }
+    public void RayToArm()
 	{
-		Ray inputRay = Camera.main.ScreenPointToRay(Input.mousePosition);
 		RaycastHit hit;
-
-		if (Physics.Raycast(inputRay, out hit))
+	
+		Vector3 startPosOfRay = transform.position + new Vector3(0,-0.1f,0);
+		Vector3 directionOfRay = (transform.position + new Vector3(0, -0.05f, 10f))- (transform.position + new Vector3(0, -0.05f, 0f));
+		if (Physics.Raycast(startPosOfRay, directionOfRay, out hit, 3f, layerMask))
 		{
-			WaxMeshCreator deformer = hit.collider.GetComponent<WaxMeshCreator>();
-			if (deformer)
+			Debug.Log("Hitted");
+			WaxMeshCreator waxMeshCreator = hit.collider.GetComponent<WaxMeshCreator>();
+			if (waxMeshCreator)
 			{
 				
 				Vector3 point = hit.point;
 				point += hit.normal * forceOffset;
-				deformer.AddForceToNormal(point, force);
+				waxMeshCreator.AddForceToNormal(point, force);
+				if (!myAnim.GetBool("isWaxing"))
+				{
+					myAnim.SetBool("isWaxing", true);
+
+				}
+			}
+
+		}
+		else
+		{
+			if (myAnim.GetBool("isWaxing"))
+			{
+				myAnim.SetBool("isWaxing", false);
+
 			}
 		}
 	}
