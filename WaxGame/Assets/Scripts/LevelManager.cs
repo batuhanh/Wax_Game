@@ -12,7 +12,7 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private int currentLevel;
     [SerializeField] private Text levelText;
     [SerializeField] private GameObject winMenu;
-    [SerializeField] private GameObject failMenu;
+    [SerializeField] private Animator armAnim;
     private void Awake()
     {
         Application.targetFrameRate = 60;
@@ -21,7 +21,7 @@ public class LevelManager : MonoBehaviour
     {
         
         currentLevel = PlayerPrefs.GetInt("level", 0);
-        //LoadCurrentlevel();
+        LoadCurrentlevel();
         eventManager.CallLevelStartedEvent();
 
     }
@@ -39,14 +39,15 @@ public class LevelManager : MonoBehaviour
         currentLevel++;
         PlayerPrefs.SetInt("level", currentLevel);
         winMenu.SetActive(true);
+        armAnim.SetTrigger("Win");
     }
     public void RestartScene() // Restarting scene to load new or existing level
     {
         SceneManager.LoadScene(0);
     }
-    private void LevelFailed()//Opening Fail Menu
+    private void LevelFailed()
     {
-        failMenu.SetActive(true);
+     
     }
     void OnEnable()
     {

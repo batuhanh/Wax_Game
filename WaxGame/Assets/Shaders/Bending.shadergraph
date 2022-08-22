@@ -1246,7 +1246,7 @@
     },
     "m_SurfaceType": 1,
     "m_AlphaMode": 0,
-    "m_TwoSided": false,
+    "m_TwoSided": true,
     "m_AlphaClip": false,
     "m_CustomEditorGUI": ""
 }
@@ -2184,7 +2184,7 @@
     },
     "m_Name": "RotationRate",
     "m_DefaultReferenceName": "Vector1_fccb1ddedb504f62a635d35aa5d4330a",
-    "m_OverrideReferenceName": "",
+    "m_OverrideReferenceName": "_RotationRate",
     "m_GeneratePropertyBlock": true,
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,

@@ -7,13 +7,14 @@ using UnityEngine;
 public class WaxMeshCreator : MonoBehaviour
 {
     [SerializeField] private float shapeSpeed = 4f;
+    [SerializeField] private EventManager eventManager;
     private Mesh deformingMesh;
     private Vector3[] originalVertices;
     private Vector3[] originalVerticesPositions;
     private float maxDistanceForVertex = 170;
     private const float maxDistanceConstant = 170;
     [SerializeField] private List<Vector3> upperSideVertices = new List<Vector3>();
-
+    private int selectedVerticeCount = 0;
     private void Start()
     {
         deformingMesh = GetComponent<MeshFilter>().mesh;
@@ -65,6 +66,10 @@ public class WaxMeshCreator : MonoBehaviour
         upperSideMesh.RecalculateNormals();
         GetComponent<MeshFilter>().mesh = upperSideMesh;
     }
+    private float GetComplateRatio()
+    {
+        return (float)selectedVerticeCount / (float)upperSideVertices.Count;
+    }
     public void AddForceToNormal(Vector3 point, float force)
     {
         point = transform.InverseTransformPoint(point);
@@ -93,7 +98,16 @@ public class WaxMeshCreator : MonoBehaviour
                     //upperSideVertices.Add(originalVertices[i]);
                     if (originalVertices[i] == originalVerticesPositions[i])
                     {
+                        float complateRatio = GetComplateRatio();
+                        Debug.Log(complateRatio);
+                        if (complateRatio>0.22f)
+                        {
+                            Debug.Log("Win");
+                            eventManager.CallFirstStageComplatedEvent();
+                        }
+
                         upperSideVertices[i] = originalVertices[i];
+                        selectedVerticeCount++;
                     }
 
                     deformingMesh.RecalculateNormals();

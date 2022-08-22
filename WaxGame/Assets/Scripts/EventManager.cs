@@ -16,11 +16,15 @@ public class EventManager : MonoBehaviour
 
     public delegate void LevelFailed();
     public static event LevelFailed myLevelFailed;
-  
+
+    public delegate void FirstStageComplated();
+    public static event FirstStageComplated firstStageComplated;
+
     public void CallLevelStartedEvent()
     {
         if (myLevelStarted != null)
             myLevelStarted();
+        Debug.Log("LevelStartedEvent");
     }
     public void CallLevelCompletedEvent()
     {
@@ -32,7 +36,11 @@ public class EventManager : MonoBehaviour
         if (myLevelFailed != null)
             myLevelFailed();
     }
-
+    public void CallFirstStageComplatedEvent()
+    {
+        if (firstStageComplated != null)
+            firstStageComplated();
+    }
 
 }
 

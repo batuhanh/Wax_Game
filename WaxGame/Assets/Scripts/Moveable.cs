@@ -29,6 +29,7 @@ public class Moveable : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
+                Debug.Log("MouseDown");
                 mousePosition = Input.mousePosition;
                 targetZVal = -0.044f;
                 myAnim.SetBool("isMoving", true);
@@ -62,21 +63,23 @@ public class Moveable : MonoBehaviour
     private void MakeMoveable()
     {
         canMove = true;
+        Debug.Log("MakeMoveable");
     }
     private void MakeNonMovable()
     {
         canMove = false;
+        isMoving = false;
+        Debug.Log("MakenonMoveable");
     }
-    void OnEnable()
+    public virtual void OnEnable()
     {
         EventManager.myLevelStarted += MakeMoveable;
-        EventManager.myLevelFailed += MakeNonMovable;
-        EventManager.myLevelCompleted += MakeNonMovable;
+        EventManager.firstStageComplated += MakeNonMovable;
+
     }
-    void OnDisable()
+    public virtual void OnDisable()
     {
         EventManager.myLevelStarted -= MakeMoveable;
-        EventManager.myLevelFailed -= MakeNonMovable;
-        EventManager.myLevelCompleted -= MakeNonMovable;
+        EventManager.firstStageComplated -= MakeNonMovable;
     }
 }
