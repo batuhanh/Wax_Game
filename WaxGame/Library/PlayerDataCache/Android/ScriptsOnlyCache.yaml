@@ -53,10 +53,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -156,71 +154,71 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3052}
     - Class: 114
-      Script: {instanceID: 3254}
+      Script: {instanceID: 3062}
     - Class: 114
-      Script: {instanceID: 3314}
+      Script: {instanceID: 3256}
     - Class: 114
-      Script: {instanceID: 3454}
+      Script: {instanceID: 3316}
     - Class: 114
-      Script: {instanceID: 3462}
+      Script: {instanceID: 3456}
     - Class: 114
-      Script: {instanceID: 3620}
+      Script: {instanceID: 3464}
     - Class: 114
-      Script: {instanceID: 3690}
+      Script: {instanceID: 3622}
     - Class: 114
-      Script: {instanceID: 3748}
+      Script: {instanceID: 3692}
     - Class: 114
-      Script: {instanceID: 3890}
+      Script: {instanceID: 3750}
     - Class: 114
       Script: {instanceID: 3892}
     - Class: 114
-      Script: {instanceID: 4036}
+      Script: {instanceID: 3894}
     - Class: 114
-      Script: {instanceID: 4058}
+      Script: {instanceID: 4038}
     - Class: 114
-      Script: {instanceID: 4152}
+      Script: {instanceID: 4060}
     - Class: 114
-      Script: {instanceID: 4208}
+      Script: {instanceID: 4154}
     - Class: 114
-      Script: {instanceID: 4250}
+      Script: {instanceID: 4210}
     - Class: 114
-      Script: {instanceID: 4280}
+      Script: {instanceID: 4252}
     - Class: 114
-      Script: {instanceID: 4316}
+      Script: {instanceID: 4282}
     - Class: 114
-      Script: {instanceID: 4408}
+      Script: {instanceID: 4318}
     - Class: 114
-      Script: {instanceID: 4412}
+      Script: {instanceID: 4410}
     - Class: 114
-      Script: {instanceID: 4486}
+      Script: {instanceID: 4414}
     - Class: 114
-      Script: {instanceID: 4592}
+      Script: {instanceID: 4488}
     - Class: 114
-      Script: {instanceID: 4604}
+      Script: {instanceID: 4594}
     - Class: 114
-      Script: {instanceID: 4786}
+      Script: {instanceID: 4606}
     - Class: 114
-      Script: {instanceID: 5262}
+      Script: {instanceID: 4788}
     - Class: 114
-      Script: {instanceID: 5440}
+      Script: {instanceID: 5264}
     - Class: 114
-      Script: {instanceID: 5492}
+      Script: {instanceID: 5442}
     - Class: 114
-      Script: {instanceID: 5690}
+      Script: {instanceID: 5494}
     - Class: 114
-      Script: {instanceID: 5920}
+      Script: {instanceID: 5692}
     - Class: 114
-      Script: {instanceID: 5968}
+      Script: {instanceID: 5922}
     - Class: 114
-      Script: {instanceID: 6062}
+      Script: {instanceID: 5970}
     - Class: 114
-      Script: {instanceID: 6196}
+      Script: {instanceID: 6064}
     - Class: 114
-      Script: {instanceID: 6298}
+      Script: {instanceID: 6198}
     - Class: 114
-      Script: {instanceID: 6362}
+      Script: {instanceID: 6300}
     - Class: 114
-      Script: {instanceID: 31978}
+      Script: {instanceID: 6364}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -508,6 +506,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: CanvasScaler
+  - hash:
+      serializedVersion: 2
+      Hash: 2009829f83dc2dac4773d0fd224b6227
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: WaxRemover
   - hash:
       serializedVersion: 2
       Hash: cf9f5cf2c3145a37ac07f00e50e460f9
@@ -1096,13 +1100,7 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: TouchInputModule
-  - hash:
-      serializedVersion: 2
-      Hash: 2009829f83dc2dac4773d0fd224b6227
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: WaxRemover
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/batuh/Desktop/UnityProjects/GoodJobGamesTestCase/WaxGame/WaxGame0.01.apk
+  playerPath: C:/Users/batuh/Desktop/UnityProjects/GoodJobGamesTestCase/WaxGame/WaxGame0.02.apk
