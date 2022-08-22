@@ -13,8 +13,13 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private Text levelText;
     [SerializeField] private GameObject winMenu;
     [SerializeField] private GameObject failMenu;
+    private void Awake()
+    {
+        Application.targetFrameRate = 60;
+    }
     private void Start()
     {
+        
         currentLevel = PlayerPrefs.GetInt("level", 0);
         //LoadCurrentlevel();
         eventManager.CallLevelStartedEvent();
