@@ -1,4 +1,4 @@
-# Test_Case_GoodJobGames
+# Wax_Game
 
 I created a Modular Mesh Deform System for the wax effect in this project. and I created the Mesh Bending Shader.
 
